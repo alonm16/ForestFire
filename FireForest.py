@@ -57,7 +57,7 @@ class FireForest:
                     self.number_burned_trees += 1
 
             curr_tree.decrease_time()
-            if curr_tree.time > 0:
+            if curr_tree.time_to_burn > 0:
                 self.on_fire.append(curr_tree)
 
     def conclusion(self):
