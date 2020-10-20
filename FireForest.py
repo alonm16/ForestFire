@@ -50,7 +50,7 @@ class FireForest:
         """
         for each burning tree, neighboring trees might get burned according to the spreading probability
         """
-        for i in range(len(self.on_fire)):
+        for _ in range(len(self.on_fire)):
             curr_tree = self.on_fire.pop(0)
             for (neighbor_row, neighbor_col) in self.__get_legal_neighbors(curr_tree.row, curr_tree.col):
                 if random.randint(1, 100) <= self.spreading_probability and\
@@ -83,7 +83,7 @@ class FireForest:
 
     def simulation(self):
         """
-        picks a tree randomly that starts to burn, and run each step until the forest stops to burn
+        picks a tree randomly that starts to burn, and runs each step until the forest stops to burn
         """
         start_tree_x = random.randint(0, self.forest_x-1)
         start_tree_y = random.randint(0, self.forest_y-1)
@@ -95,4 +95,3 @@ class FireForest:
             self.print_forest()
 
         self.conclusion()
-
